@@ -101,12 +101,9 @@ export function Navigation(props: NavigationProps) {
           <div className="opacity-0 absolute inset-0 block h-20 pointer-events-auto" />
           <div
             className={classNames(
-              "transition-[background-color,backdrop-filter,opacity] duration-300 ease-in-out",
+              "absolute inset-0 block h-[11rem] overflow-hidden",
+              "transition-opacity duration-300 ease-in-out",
               props.bg ? "opacity-100" : "opacity-0",
-              "absolute inset-0 block h-[11rem]",
-              props.clearBackground
-                ? "backdrop-blur-md bg-transparent"
-                : "bg-background-main",
             )}
             style={{
               maskImage: `linear-gradient(
@@ -122,7 +119,16 @@ export function Navigation(props: NavigationProps) {
                 rgba(0, 0, 0, 0) 100%
               )`,
             }}
-          />
+          >
+            <div
+              className={classNames(
+                "absolute inset-0 transition-[background-color,backdrop-filter] duration-300 ease-in-out",
+                props.clearBackground
+                  ? "backdrop-blur-md bg-transparent"
+                  : "bg-background-main",
+              )}
+            />
+          </div>
         </div>
       </div>
 
