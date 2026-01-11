@@ -45,6 +45,7 @@ Then you can visit the local instance [here](http://localhost:5173) or, at local
 
 To update a P-Stream instance you can type the below commands into a terminal at the root of your project.
 
+
 ```bash
 git remote add upstream https://github.com/p-stream/p-stream.git
 git fetch upstream # Grab the contents of the new remote source
